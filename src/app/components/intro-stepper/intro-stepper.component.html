@@ -1,0 +1,88 @@
+<div style="max-width: 1200px; margin: auto; padding: 2rem;">
+  <h1>Welcome to MoneyBuddy</h1>
+  <mat-horizontal-stepper linear>
+    <!-- Step 1 -->
+    <mat-step [completed]="true">
+      <ng-template matStepLabel>What is MoneyBuddy?</ng-template>
+      <p>
+        MoneyBuddy is your personal finance assistant. It helps you manage debt,
+        track expenses, and make smarter money decisions — all through a simple, chat-based experience.
+      </p>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <!-- Step 2 -->
+    <mat-step [completed]="true">
+      <ng-template matStepLabel>Your Privacy</ng-template>
+      <p>
+        Your privacy is our top priority. All personal information you enter is
+        <strong>100% private, confidential, and never for sale</strong>.
+      </p>
+      <p>
+        We don't share your data with third parties, ever.
+      </p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <!-- Step 3 -->
+    <mat-step [completed]="true">
+      <ng-template matStepLabel>What You’ll Be Asked</ng-template>
+      <p>
+        In a quick chat, we’ll ask a few simple things:
+      </p>
+      <ul>
+        <li>Your <strong>monthly income</strong></li>
+        <li>A description or summary of your <strong>debt</strong></li>
+        <li>Your <strong>monthly expenses</strong></li>
+        <li>Your <strong>savings and monthly contributions</strong></li>
+      </ul>
+      <p>No spreadsheets. No stress. Just a conversation.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <!-- Step 4 -->
+    <mat-step [completed]="true">
+      <ng-template matStepLabel>How MoneyBuddy Helps</ng-template>
+      <p>
+        Once you’ve shared your details, you can ask MoneyBuddy anything:
+      </p>
+      <ul>
+        <li><em>"How can I get out of debt fastest?"</em></li>
+        <li><em>"How should I organize recurring expenses across my cards?"</em></li>
+        <li><em>"Can I afford a $500/mo car?"</em></li>
+        <li><em>"Can I buy a $1,400 TV right now?"</em></li>
+      </ul>
+      <p>
+        And MoneyBuddy will respond like: <br>
+        <em>
+          “Right now, based on your income, expenses, and goals, buying a $1,400 TV isn’t ideal.
+          But if you reduce dining out by $150/month, you could afford a $1,300 TV in 3 months.”
+        </em>
+      </p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <!-- Step 5 -->
+    <mat-step>
+      <ng-template matStepLabel>Let’s Get Started</ng-template>
+      <p>
+        Ready to take control of your finances? Let’s start the conversation.
+      </p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" (click)="finish()">Start Now</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
