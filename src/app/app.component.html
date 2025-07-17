@@ -1,1 +1,12 @@
-<router-outlet />
+<mat-sidenav-container fullscreen class="app-container">
+  <mat-sidenav mode="side" opened class="app-sidenav">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header></app-header>
+    <main class="app-main">
+      <app-chat-panel></app-chat-panel>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
