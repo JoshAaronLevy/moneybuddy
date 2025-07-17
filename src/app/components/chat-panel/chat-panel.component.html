@@ -1,9 +1,13 @@
-<div class="chat-thread">
-  <!-- Message bubbles will go here -->
-  <p>[System]: What’s your net monthly income?</p>
+<div class="chat-thread" #chatThread>
+  @for (message of messages(); track message) {
+  <div class="message-row" [ngClass]="message.sender" [@fadeIn]>
+    <div class="sender-label" *ngIf="message.sender === 'bot'">MoneyBuddy</div>
+    <div class="message-bubble">{{ message.text }}</div>
+  </div>
+  }
 </div>
 
 <div class="chat-input">
-  <input type="text" placeholder="Type your answer..." />
-  <button>Send</button>
+  <input type="text" placeholder="Type your answer..." [(ngModel)]="userInput" (keyup.enter)="sendMessage()" />
+  <button (click)="sendMessage()">Send</button>
 </div>
