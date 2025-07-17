@@ -1,15 +1,38 @@
 <div class="sidebar-container">
-  <div class="menu-top">
-    <h3>MoneyBuddy Setup</h3>
-    <ul>
-      <li>💼 Net Income</li>
-      <li>💳 Debt</li>
-      <li>💸 Expenses</li>
-      <li>🏦 Savings</li>
-    </ul>
+  <div class="top-section">
+    <div class="core-menu">
+      <h3>Core Prompts</h3>
+      <ul>
+        <li>
+          Net Income
+          <span class="status-icon" [ngClass]="getStatusClass('income')">⚠️</span>
+        </li>
+        <li>
+          Debt
+          <span class="status-icon" [ngClass]="getStatusClass('debt')">✅</span>
+        </li>
+        <li>
+          Expenses
+          <span class="status-icon" [ngClass]="getStatusClass('expenses')">⚠️</span>
+        </li>
+        <li>
+          Savings
+          <span class="status-icon" [ngClass]="getStatusClass('savings')">✅</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="core-menu">
+      <h3>Chat Logs</h3>
+      <ul>
+        <li>Holiday Gift Budget</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="menu-bottom">
+  <div class="footer-menu">
     <button (click)="openIntroModal()">❓ Help / About</button>
   </div>
 </div>
