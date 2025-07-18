@@ -1,0 +1,45 @@
+<div class="income-prompt">
+  <h3>What is your monthly income?</h3>
+
+  <input
+    type="text"
+    [(ngModel)]="userMessage"
+    (keyup.enter)="submit()"
+    placeholder="e.g., I make $4000 per month"
+  />
+  <button (click)="submit()" [disabled]="loading">Submit</button>
+
+  @if (loading) {
+    <div>Analyzing...</div>
+  }
+
+  @if (error) {
+    <div class="error">{{ error }}</div>
+  }
+
+  @if (result?.containsIncome) {
+    <p>
+      💰 Income detected:
+      <strong *ngIf="result?.amount">\${{ result?.amount }}</strong>
+      <span *ngIf="result?.frequency">({{ result?.frequency }})</span>
+    </p>
+
+    @if (result?.ambiguous) {
+      <div>⚠️ Ambiguous input: <em>{{ result?.reason }}</em></div>
+    } @else {
+      <div>
+        ✅ Got it! If you'd like to add any extra context (e.g. fluctuating income), feel free to type more.
+        <br />
+        Otherwise, click <strong>Next</strong> to enter your debt information.
+      </div>
+    }
+  } @else {
+    <p>❌ That doesn't appear to be income-related. Please try again.</p>
+  }
+
+  @if (showNext) {
+    <div style="margin-top: 16px;">
+      <button (click)="goToNextStep()">Next</button>
+    </div>
+  }
+</div>
